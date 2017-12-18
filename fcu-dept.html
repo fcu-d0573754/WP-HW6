@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("#college").change(function(){
+		$("#dept").empty();
+		var checkValue=$("#college").val();
+		var businessDepts = ["會計學系","國際經營與貿易學系","財稅學系","行銷學系"];
+		var engineeringDepts = ["工業工程學系","化學工程學系","精密系統設計系"];
+		var computerDepts = ["資訊工程學系","電機工程學系","通訊工程學系"];
+		switch (checkValue) {
+			case '1':
+				for(var i=0;i<businessDepts.length;i++){
+					$("#dept").append('<option>'+businessDepts[i]+'</option>');
+				}
+				break;
+			case '2':
+				for(var i=0;i<engineeringDepts.length;i++){
+					$("#dept").append('<option>'+engineeringDepts[i]+'</option>');
+				}
+				break;
+			case '3':
+				for(var i=0;i<computerDepts.length;i++){
+					$("#dept").append('<option>'+computerDepts[i]+'</option>');
+				}
+				break;
+		}
+	});
+});
+</script>
+</head>
+<body>
+	<h2>請選擇學院</h2>
+	<select id="college">
+		<option value='1'>商學院</option>
+		<option value='2'>工學院</option>
+		<option value='3'>資電學院</option>
+	</select>
+	<h2>該學院的所有科系</h2>
+	<select id="dept">
+		<option>會計學系</option>
+		<option>國際經營與貿易學系</option>
+		<option>財稅學系</option>
+		<option>行銷學系</option>
+	</select>
+
+</body>
+</html>
